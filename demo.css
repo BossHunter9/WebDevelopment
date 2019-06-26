@@ -5,6 +5,22 @@
     background-color: black;
 }
 a{
-    color:yellow;
+    color: aqua;
     text-align: left;
+    margin: 15px
 }
+table{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+}
+.table-title{
+    font-size: 20px
+}
+td, p, article{
+    color: white;
+}
+td{
+    font-size: 18px;
+}
+
