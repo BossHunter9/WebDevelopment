@@ -39,3 +39,9 @@ li{
     background-size: cover; 
     border-color: black;
 }
+footer{
+    size: 10px;
+    font-family: serif;
+    font-style: italic;
+    text-align: left;
+}
