@@ -16,7 +16,11 @@ table{
     
 }
 .table-title{
-    font-size: 20px
+    font-size: 20px;
+}
+.table-title2{
+    font-size: 20px;
+    text-align: left;
 }
 td, p, article{
     color: white;
@@ -31,13 +35,25 @@ td{
 ul{
     color: black;
 }
-li{
-    display: inline-block;
+ul li{
+    display: inline;
     padding: 1em;
+}
+ol{
+    color: white;
+    padding: .5em;
+    text-align: left;
+    font-size: 20px;
 }
 .backgroundpic{
     background-size: cover; 
     border-color: black;
+}
+.number-page{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(1, 77, 1);
+    background-color: red;
+    text-align: right;
 }
 footer{
     size: 10px;
