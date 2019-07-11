@@ -51,15 +51,17 @@ ol{
 }
 .number-page{
     font-family: Arial, Helvetica, sans-serif;
-    color: rgb(1, 77, 1);
     background-color: red;
     text-align: right;
-    width: 1000px;
-    height: 800px;
+    width: 2500px;
+    height: 1000px;
 }
 footer{
     size: 10px;
     font-family: serif;
     font-style: italic;
     text-align: left;
+}
+.number-m{
+    color: rgb(1, 73, 1);
 }
