@@ -54,6 +54,8 @@ ol{
     color: rgb(1, 77, 1);
     background-color: red;
     text-align: right;
+    width: 1000px;
+    height: 800px;
 }
 footer{
     size: 10px;
