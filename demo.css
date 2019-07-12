@@ -64,8 +64,12 @@ footer{
     font-style: italic;
     text-align: left;
     position: relative;
-    top: 328px;
+    top: 300px;
 }
 .number-m{
+    color: rgb(6, 211, 6);
+}
+.gameStuff{
+    text-align: center;
     color: rgb(6, 211, 6);
 }

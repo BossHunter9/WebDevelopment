@@ -4,9 +4,12 @@
         Guess The Number
     </title>
 
+
     <link rel="stylesheet" href="/demo.css" type="text/css">
+    
 </head>
 <body class="number-page">
+        <script src="/numberGame.js"></script>
         <nav>
             <ul>
                 <li>
@@ -21,10 +24,32 @@
             </ul>
         </nav>
 
+        <div class="gameStuff">
+                
+                <h1>Guess a number to try to win<h1>
+                <h2>or not.  Your choice.</h2>
+
+            <form name="gameOfNum"><br>
+                <input type="button" name="StartButton" value="Start" onclick="startGame(this.form)">
+                <p id="Begin"></p>
+                <input type="text" name="inputBox" value="">
+                <input type="button" name="SubmitButton" value="Submit" onclick="guess(this.form)">
+                <p id="Answer"></p>
+                
+            </form>
+            <form name="giveUpform">
+                    <input type="button" name="GiveButton" value="GiveUp" onclick="GiveUp(this.form)">
+                    <p id= "gaveUp"></p>
+            </form>
+            
+        
+
+        </div>
+        
         <h3>
             <article>
                 <p class= "number-m">
-                    Congratulations. <br>You arrived here before the Number Game did. <br>It is current still being produced, <br>so feel free to come back in a few days. <br>Or Go find a different website, I get it.  <br>We live in the age of the internet. <br>No one is patient now a days. <br><br><br><br><br><br> Also Christmas. <br>Because Why not
+                    The Number Game is now here have fun.  <br>Also Christmas is still here to.
                 </p>
             </article>
         </h3>
