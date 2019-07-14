@@ -73,3 +73,9 @@ footer{
     text-align: center;
     color: rgb(6, 211, 6);
 }
+.WeatherThing{
+    text-align: left;
+    font-size: smaller;
+    margin-top: 5em;
+    margin-bottom: 1em;
+}
