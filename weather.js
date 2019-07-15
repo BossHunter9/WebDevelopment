@@ -1,22 +1,57 @@
-var weatherData;
-var request = new XMLHttpRequest();
-var date = new Date();
+let url = "http://api.openweathermap.org/data/2.5/forecast?q=Salt+Lake+City,us&APPID=d16f910e07bccc8a2482189dd962a46a"
 
-loadData();
 
-function loadData() {
+
+function loadDoc() {
     
-    request.open('GET', 'http://api.openweathermap.org/data/2.5/forecast/daily?q=Salt+Lake+City,us&units=imperial&cnt=5&appid=d16f910e07bccc8a2482189dd962a46a');
-    request.onload = loadComplete;
-    request.send();
-}
+    //---------------------
+    // This is where you would get references to all
+    // HTML elements that you want to update with new data
+    // based on the results of the asynchronous API call you make below
+    //---------------------
+    
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            
+            //---------------------
+            console.log("Successful...");
+            //console.log(this.responseText);
+            // This is where you would update the HTML elements above
+            // with the data you pull from the API call response
+            // document.getElementById("demo").innerHTML = this.responseText;
+            //---------------------
+            
+            
+            let weatherDataDays = JSON.parse(this.response);
+           //console.log(weatherDataDays.list)
+            
+            
+           
+           for(let counter = 0; counter < weatherDataDays.list.length; counter += 8){
+                let currentDay = weatherDataDays.list[counter];
+                console.log(currentDay);
+                console.log(counter);
+            }
 
-function loadComplete(evt) {
-    weatherData = JSON.parse(request.responseText);
-    console.log(weatherData);
-    document.getElementById("place").innerHTML = weatherData.city.name;
-    document.getElementById("day").innerHTML = (date.getMonth()+1) + "/" + date.getDate();
-    document.getElementById("currentTemp").innerHTML = weatherData.list[0].temp.day;
-    document.getElementById("conditions").innerHTML = weatherData.list[0].weather[0].main;
-    document.getElementById("conditionsDesc").innerHTML = weatherData.list[0].weather[0].description;  
+
+
+
+        } else {
+            
+            //---------------------
+            console.log("failure...")
+            // error message for user that API is down
+            //---------------------
+            
+        }
+    };
+    xhttp.open("GET", url, true);
+    xhttp.send();
 }
+        
+//---------------------
+// Make sure you call the function to begin the request for information
+// In the weather widget, you will want to call this function using the
+// onClick event of the form submit button
+loadDoc();
