@@ -1,4 +1,12 @@
 let url = "http://api.openweathermap.org/data/2.5/forecast?q=Salt+Lake+City,us&units=imperial&APPID=d16f910e07bccc8a2482189dd962a46a"
+var today = new Date();
+var ForcastDate = (today.getMonth()+1) + "/" + (today.getDate()) + "/" + (today.getFullYear());
+var ForcastDate1 = (today.getMonth()+1) + "/" + (today.getDate() + 1) + "/" + (today.getFullYear());
+var ForcastDate2 = (today.getMonth()+1) + "/" + (today.getDate() + 2) + "/" + (today.getFullYear());
+var ForcastDate3 = (today.getMonth()+1) + "/" + (today.getDate() + 3) + "/" + (today.getFullYear());
+var ForcastDate4 = (today.getMonth()+1) + "/" + (today.getDate() + 4) + "/" + (today.getFullYear());
+var ForcastDate5 = (today.getMonth()+1) + "/" + (today.getDate() + 5) + "/" + (today.getFullYear());
+
 
 
 
@@ -25,8 +33,7 @@ function loadDoc() {
             
             let weatherDataDays = JSON.parse(this.response);
             
-            //let weatherDate = newDate(currentDay.dt_txt + 'UTC');
-            //console.log(weatherDate.getDate());
+           
            
             //console.log(weatherDataDays.list)
             
@@ -37,16 +44,16 @@ function loadDoc() {
                 console.log(currentDay);
                 console.log(counter);
                 if(dayCounter == 0){
+                document.getElementById("day").innerHTML = ForcastDate;
                 document.getElementById("place").innerHTML = "City = " + weatherDataDays.city.name;
-                document.getElementById("day").innerHTML = weatherDataDays.dt_txt;
                 document.getElementById("currentTemp").innerHTML = weatherDataDays.list[0].main.temp + " Degrees fahrenheit";
                 //document.getElementById("conditions").innerHTML = weatherDataDays.list[0].weather[0].main;
                 document.getElementById("conditionsDesc").innerHTML = "Sky behavior = " + weatherDataDays.list[0].weather[0].description;
                 dayCounter++;
                 }
                 else if(dayCounter == 1){
+                    document.getElementById("day1").innerHTML = ForcastDate1;
                     document.getElementById("place1").innerHTML = "City = " + weatherDataDays.city.name;
-                    document.getElementById("day1").innerHTML = weatherDataDays.dt_txt;
                     document.getElementById("currentTemp1").innerHTML = weatherDataDays.list[1].main.temp + " Degrees fahrenheit";
                     //document.getElementById("conditions1").innerHTML = weatherDataDays.list[1].weather[0].main;
                     document.getElementById("conditionsDesc1").innerHTML =  "Sky behavior = " + weatherDataDays.list[1].weather[0].description;
@@ -54,7 +61,7 @@ function loadDoc() {
                 }
                 else if(dayCounter == 2){
                     document.getElementById("place2").innerHTML = "City = " + weatherDataDays.city.name;
-                    document.getElementById("day2").innerHTML = weatherDataDays.dt_txt;
+                    document.getElementById("day2").innerHTML = ForcastDate2;
                     document.getElementById("currentTemp2").innerHTML = weatherDataDays.list[2].main.temp + " Degrees fahrenheit";
                    // document.getElementById("conditions2").innerHTML = weatherDataDays.list[2].weather[0].main ;
                     document.getElementById("conditionsDesc2").innerHTML = "Sky behavior = " + weatherDataDays.list[2].weather[0].description;
@@ -62,7 +69,7 @@ function loadDoc() {
                 }
                 else if(dayCounter == 3){
                     document.getElementById("place3").innerHTML = "City = " + weatherDataDays.city.name;
-                    document.getElementById("day3").innerHTML = weatherDataDays.dt_txt;
+                    document.getElementById("day3").innerHTML = ForcastDate3;
                     document.getElementById("currentTemp3").innerHTML = weatherDataDays.list[3].main.temp + " Degrees fahrenheit";
                    // document.getElementById("conditions3").innerHTML = weatherDataDays.list[3].weather[0].main;
                     document.getElementById("conditionsDesc3").innerHTML = "Sky behavior = " + weatherDataDays.list[3].weather[0].description;
@@ -70,7 +77,7 @@ function loadDoc() {
                     }
                 else if(dayCounter == 4){
                     document.getElementById("place4").innerHTML = "City = " + weatherDataDays.city.name;
-                    document.getElementById("day4").innerHTML = weatherDataDays.dt_txt;
+                    document.getElementById("day4").innerHTML = ForcastDate4;
                     document.getElementById("currentTemp4").innerHTML = weatherDataDays.list[4].main.temp + " Degrees fahrenheit";
                    // document.getElementById("conditions4").innerHTML = weatherDataDays.list[4].weather[0].main;
                     document.getElementById("conditionsDesc4").innerHTML = "Sky behavior = " + weatherDataDays.list[4].weather[0].description;
@@ -78,7 +85,7 @@ function loadDoc() {
                     }
                 else if(dayCounter == 5){
                     document.getElementById("place5").innerHTML = "City = " + weatherDataDays.city.name;
-                    document.getElementById("day5").innerHTML = weatherDataDays.dt_txt;
+                    document.getElementById("day5").innerHTML = ForcastDate5;
                     document.getElementById("currentTemp5").innerHTML = weatherDataDays.list[5].main.temp + " Degrees fahrenheit";
                    // document.getElementById("conditions5").innerHTML = weatherDataDays.list[5].weather[0].main;
                     document.getElementById("conditionsDesc5").innerHTML = "Sky behavior = " + weatherDataDays.list[5].weather[0].description;
